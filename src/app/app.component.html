@@ -1,0 +1,8 @@
+<div class="valentine-container">
+  <h1 class="question">Bebe, will you be my Valentine?</h1>
+  <div class="buttons">
+    <button class="yes-button" (click)="showFlower()">YES</button>
+    <button *ngIf="showNoButton" class="no-button" (mouseover)="moveNoButton()" (click)="moveNoButton()">NO</button>
+  </div>
+  <!-- <app-flower *ngIf="flowerVisible"></app-flower> -->
+</div>
