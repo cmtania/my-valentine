@@ -3,15 +3,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    height: 100%;
     font-family: 'Pacifico', cursive;
-
     text-align: center;
   }
   
   .question {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 2rem;
     animation: fadeIn 2s ease-in-out;
     color: #523232;
@@ -31,6 +29,7 @@
     transition: transform 0.3s ease, background 0.3s ease;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    animation: fadeIn 2s ease-in-out;
   }
   
   .yes-button {
@@ -62,4 +61,35 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .heart-shape {
+    position: absolute;
+    top: 26rem;
+  }
+
+  .fancy-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .answered {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    color: #ba3348;
+    margin-bottom: 10px;
+  }
+  
+  .itinerary {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
   }

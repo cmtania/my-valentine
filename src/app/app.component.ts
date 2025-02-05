@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ConfettiService } from './feature/service/canvas-confetti.service';
 
 @Component({
@@ -10,21 +10,12 @@ export class AppComponent {
   title = 'my-valentine';
   constructor(private confettiService: ConfettiService) { }
 
-  flowerVisible = false;
-  showNoButton = true;
+  hideButton = true;
+  isYesClicked = false;
 
-  showFlower() {
-    this.flowerVisible = true;
-    this.showNoButton = false;
-
-    for (let i = 0; i < 5; i++) {
-      this.confettiService.triggerConfetti();
-    }
-    
-  }
-
-  askAgain() {
-    alert("Are you sure? Think again!");
+  yesClick() {
+    this.isYesClicked = true;
+    this.hideButton = false;
   }
 
   moveNoButton() {
@@ -35,4 +26,16 @@ export class AppComponent {
     noButton.style.left = `${x}px`;
     noButton.style.top = `${y}px`;
   }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    console.log('Document clicked!', event);
+    if(this.isYesClicked) {
+      const x = event.clientX;
+      const y = event.clientY;
+      this.confettiService.triggerConfetti(x, y);
+    }
+
+  }
+
 }

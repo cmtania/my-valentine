@@ -8,11 +8,11 @@ export class ConfettiService {
 
   constructor() { }
 
-  public triggerConfetti(): void {
+  public triggerConfetti(x: number, y: number): void {
     confetti({
         particleCount: 100,
         spread: 150,
-        origin: { y: 0.6 },
+        origin: { x: x / window.innerWidth, y: y / window.innerHeight }
     });
   }
 }
